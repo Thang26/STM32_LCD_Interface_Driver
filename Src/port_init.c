@@ -1,5 +1,3 @@
-#include <stdint.h>
-#include <stm32f446xx.h>
 #include <common.h>
 #include <port_init.h>
 
