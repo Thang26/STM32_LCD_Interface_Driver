@@ -33,14 +33,14 @@
  *  Macro for GPIO Clock Initialization
  */
 
-#define GPIOA_CLK_EN (1U << 0)
-#define GPIOB_CLK_EN (1U << 1)
-#define GPIOC_CLK_EN (1U << 2)
-#define GPIOD_CLK_EN (1U << 3)
-#define GPIOE_CLK_EN (1U << 4)
-#define GPIOF_CLK_EN (1U << 5)
-#define GPIOG_CLK_EN (1U << 6)
-#define GPIOH_CLK_EN (1U << 7)
+#define GPIOA_CLK_EN    (1U << 0)
+#define GPIOB_CLK_EN    (1U << 1)
+#define GPIOC_CLK_EN    (1U << 2)
+#define GPIOD_CLK_EN    (1U << 3)
+#define GPIOE_CLK_EN    (1U << 4)
+#define GPIOF_CLK_EN    (1U << 5)
+#define GPIOG_CLK_EN    (1U << 6)
+#define GPIOH_CLK_EN    (1U << 7)
 
 /*
  *  Macro for GPIO CLK Enable
@@ -71,7 +71,7 @@
 #define BSRR_PIN_CLEAR  16
 
 #define GPIOA_BSRR_SEL(PIN_NUM, PIN_SET_CLEAR)  SET_BIT(GPIOA->BSRR, 1U << (PIN_NUM + PIN_SET_CLEAR))
-#define GPIOA_BSRR_SEL(PIN_NUM, PIN_SET_CLEAR)  SET_BIT(GPIOB->BSRR, 1U << (PIN_NUM + PIN_SET_CLEAR))
+#define GPIOB_BSRR_SEL(PIN_NUM, PIN_SET_CLEAR)  SET_BIT(GPIOB->BSRR, 1U << (PIN_NUM + PIN_SET_CLEAR))
 
 //GPIOB Pin 3 & 4 is reserved for JTAG and NJTRST!
 #define GPIOB_BSRR_ALL_CLEAR                    SET_BIT(GPIOB->BSRR, 0xFFE7 << BSRR_PIN_CLEAR)
