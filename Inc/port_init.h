@@ -2,7 +2,7 @@
  * port_init.h
  *
  *  Created on: Oct 19, 2023
- *      Author: Suspicious Tom
+ *      Author: Thang Pham
  */
 
 #ifndef PORT_INIT_H_
@@ -58,9 +58,9 @@
 #define ANALOG_SEL  3U
 
 //GPIO MODER Output/Input Configuration
-#define GPIOA_MODER_SEL(PIN_NUM, MODE_SEL)      GPIOA->MODER |= ((MODE_SEL) << (PIN_NUM * 2))
-#define GPIOB_MODER_SEL(PIN_NUM, MODE_SEL)      GPIOB->MODER |= ((MODE_SEL) << (PIN_NUM * 2))
-#define GPIOC_MODER_SEL(PIN_NUM, MODE_SEL)      GPIOC->MODER |= ((MODE_SEL) << (PIN_NUM * 2))
+#define GPIOA_MODER_SEL(PIN_NUM, MODE_SEL)      SET_BIT(GPIOA->MODER, (MODE_SEL) << (PIN_NUM * 2))
+#define GPIOB_MODER_SEL(PIN_NUM, MODE_SEL)      SET_BIT(GPIOB->MODER, (MODE_SEL) << (PIN_NUM * 2))
+#define GPIOC_MODER_SEL(PIN_NUM, MODE_SEL)      SET_BIT(GPIOC->MODER, (MODE_SEL) << (PIN_NUM * 2))
 
 
 /*
@@ -70,11 +70,11 @@
 #define BSRR_PIN_SET    0
 #define BSRR_PIN_CLEAR  16
 
-#define GPIOA_BSRR_SEL(PIN_NUM, PIN_SET_CLEAR)  GPIOA->BSRR |= (1U << (PIN_NUM + PIN_SET_CLEAR))
-#define GPIOB_BSRR_SEL(PIN_NUM, PIN_SET_CLEAR)  GPIOB->BSRR |= (1U << (PIN_NUM + PIN_SET_CLEAR))
+#define GPIOA_BSRR_SEL(PIN_NUM, PIN_SET_CLEAR)  SET_BIT(GPIOA->BSRR, 1U << (PIN_NUM + PIN_SET_CLEAR))
+#define GPIOA_BSRR_SEL(PIN_NUM, PIN_SET_CLEAR)  SET_BIT(GPIOB->BSRR, 1U << (PIN_NUM + PIN_SET_CLEAR))
 
 //GPIOB Pin 3 & 4 is reserved for JTAG and NJTRST!
-#define GPIOB_BSRR_ALL_CLEAR                    GPIOB->BSRR |= (0xFFE7 << BSRR_PIN_CLEAR)
-#define GPIOC_BSRR_ALL_CLEAR                    GPIOC->BSRR |= (0xFFFF << BSRR_PIN_CLEAR)
+#define GPIOB_BSRR_ALL_CLEAR                    SET_BIT(GPIOB->BSRR, 0xFFE7 << BSRR_PIN_CLEAR)
+#define GPIOC_BSRR_ALL_CLEAR                    SET_BIT(GPIOC->BSRR, 0xFFFF << BSRR_PIN_CLEAR)
 
 #endif /* PORT_INIT_H_ */
