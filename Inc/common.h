@@ -2,14 +2,20 @@
  * common.h
  *
  *  Created on: Oct 20, 2023
- *      Author: Suspicious Tom
+ *      Author: Thang Pham
  */
 
 #ifndef COMMON_H_
 #define COMMON_H_
 
 /*
- *  Typedef declarations
+ *  Header Declarations
+ */
+#include <stdint.h>
+#include <stm32f446xx.h>
+
+/*
+ *  Typedef Declarations
  */
 typedef uint8_t UINT8;
 typedef uint32_t UINT32;
