@@ -1,18 +1,18 @@
 #include <common.h>
 #include <port_init.h>
 
-OPERATION_RESULT LCD_PORT_INIT(void){
+// OPERATION_RESULT LCD_PORT_INIT(void){
 
-	OPERATION_RESULT RETVAL;
+// 	OPERATION_RESULT RETVAL;
 
-	if(LCD_COMMAND_PORT_INIT() && LCD_D0D7_LINE_INIT()){
-		return RETVAL = OPERATION_SUCCESS;
-	}
+// 	if(LCD_COMMAND_PORT_INIT() && LCD_D0D7_LINE_INIT()){
+// 		return RETVAL = OPERATION_SUCCESS;
+// 	}
 
-	else{
-		return RETVAL = OPERATION_FAILED;
-	}
-}
+// 	else{
+// 		return RETVAL = OPERATION_FAILED;
+// 	}
+// }
 
 /*
  *	Initialize Port B (PB5, PB6, PB7) for RS, RW, and Enable.
