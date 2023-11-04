@@ -24,6 +24,8 @@
 
 int main(void)
 {
+	__disable_irq();
+	
 	if(LCD_PORT_INIT()){
 		//something
 	}
