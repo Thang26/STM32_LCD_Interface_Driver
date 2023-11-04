@@ -19,6 +19,16 @@ void USER_LED_CLEAR(void){
     GPIOA_BSRR_SEL(PIN_5, BSRR_PIN_CLEAR);
 }
 
+void USER_LED_SLOW_BLINK(void){
+
+    //TODO
+}
+
+void USER_LED_FAST_BLINK(void){
+
+    //TODO
+}
+
 //Broken function
 //TODO: MUST DECLARE FUNCTION PROTOTYPE!!!
 //TODO: MUST REMEMBER TO CLEAR UIE FLAG!!!
