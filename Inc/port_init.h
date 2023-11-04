@@ -77,4 +77,14 @@
 #define GPIOB_BSRR_ALL_CLEAR                    SET_BIT(GPIOB->BSRR, 0xFFE7 << BSRR_PIN_CLEAR)
 #define GPIOC_BSRR_ALL_CLEAR                    SET_BIT(GPIOC->BSRR, 0xFFFF << BSRR_PIN_CLEAR)
 
+/*
+ *  Other macros / masks for GPIO
+ */
+
+#define GPIOA_TOGGLE_PIN(PIN_NUM)               TOGGLE_BIT(GPIOA->ODR, 1U << PIN_NUM)
+
+
+
 #endif /* PORT_INIT_H_ */
+
+//TODO Create a mask for these GPIOX_BSRR_SEL functions and such.
