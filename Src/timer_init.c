@@ -24,6 +24,7 @@ void LED_FLASH_TIMER_INIT(UINT16 PSC_Div_Val, UINT16 ARR_Div_Val){
 }
 
 /*
+ *  250ms       PSC = 1600, ARR = 2500
  *  500ms       PSC = 1600, ARR = 5000
  *  1000ms      PSC = 1600, ARR = 10000
  */
