@@ -50,8 +50,8 @@
  *  an overflow or underflow of the counter.
  */
 
-#define TIM2_FLAG_CLEAR     SET_BIT(TIM2->SR, 0U << 0)
-#define TIM3_FLAG_CLEAR     SET_BIT(TIM3->SR, 0U << 0)
+#define TIM2_FLAG_CLEAR     CLEAR_BIT(TIM2->SR, 1U << 0)
+#define TIM3_FLAG_CLEAR     CLEAR_BIT(TIM3->SR, 1U << 0)
 
 /*
  *  Configures a TIMERx to trigger an interrupt.
