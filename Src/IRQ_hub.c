@@ -14,7 +14,10 @@
  *  This can be done by having the IRQ envoke a function. EXPERIMENTAL.
  */
 
-void TIM2_IRQHandler(void){
+#include <common.h>
+#include <user_interface.h>
 
-    
+void TIM3_IRQHandler(void){
+    TIM3->SR &= ~(1U << 0);     //Clears UIE flag for TIMER3
+    USER_LED_TOGGLE();
 }
