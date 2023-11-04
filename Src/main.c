@@ -17,6 +17,7 @@
  */
 #include <common.h>
 #include <port_init.h>
+#include <user_interface.h>
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -26,13 +27,17 @@ int main(void)
 {
 	__disable_irq();
 	
-	if(LCD_PORT_INIT()){
-		//something
-	}
-	else{
-		//The init routine failed, best we can do is try again.
-		NVIC_SystemReset();
-	}
+	// if(LCD_PORT_INIT()){
+	// 	//something
+	// }
+	// else{
+	// 	//The init routine failed, best we can do is try again.
+	// 	NVIC_SystemReset();
+	// }
+
+	USER_LED_SLOW_BLINK();
+
+	__enable_irq();
 
 	  while(1){
 
