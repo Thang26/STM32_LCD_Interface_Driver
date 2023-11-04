@@ -1,3 +1,13 @@
+/*
+ * user_interface.c
+ *
+ *  Created on: Nov 03, 2023
+ *      Author: Thang Pham
+ * 
+ *  The STM32F446RE Nucleo board has an on-board LED.
+ *  It is associated with GPIOA, Pin 5.
+ */
+
 #include <common.h>
 #include <port_init.h>
 
@@ -17,6 +27,11 @@ void USER_LED_SET(void){
 void USER_LED_CLEAR(void){
 
     GPIOA_BSRR_SEL(PIN_5, BSRR_PIN_CLEAR);
+}
+
+void USER_LED_TOGGLE(void){
+
+    GPIOA_TOGGLE_PIN(PIN_5);
 }
 
 void USER_LED_SLOW_BLINK(void){
