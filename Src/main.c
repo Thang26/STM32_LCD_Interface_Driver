@@ -16,7 +16,7 @@
  ******************************************************************************
  */
 #include <common.h>
-#include <port_init.h>
+#include <lcd_init.h>
 #include <user_interface.h>
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
@@ -25,21 +25,28 @@
 
 int main(void)
 {
-	__disable_irq();
-	
-	// if(LCD_PORT_INIT()){
-	// 	//something
-	// }
-	// else{
-	// 	//The init routine failed, best we can do is try again.
-	// 	NVIC_SystemReset();
-	// }
 
-	USER_LED_SLOW_BLINK();
+	while(1){
+
+	}
+}
+
+OPERATION_RESULT LCD_STARTUP(void){
+
+	__disable_irq();
+
+	USER_LED_BLINK_INIT();
 
 	__enable_irq();
 
-	  while(1){
+	USER_LED_FAST_BLINK();
+	
+	if(LCD_PORT_INIT()){
+		//USER_LED_SLOW_BLINK();
+	}
+	else{
+		//The init routine failed, best we can do is try again.
+		NVIC_SystemReset();
+	}
 
-	  }
 }
