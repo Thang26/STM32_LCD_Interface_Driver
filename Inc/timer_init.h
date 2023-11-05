@@ -10,6 +10,7 @@
  */
 
 void LED_FLASH_TIMER_INIT(UINT16 PSC_Div_Val, UINT16 ARR_Div_Val);
+void LED_FLASH_TIMER_UPDATE_VAL(UINT16 ARR_Div_Val);
 
 /*
  *  Macro for TIMERx Enable Initialization
