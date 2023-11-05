@@ -16,5 +16,6 @@ void USER_LED_CLEAR(void);
 void USER_LED_SET(void);
 void USER_LED_TOGGLE(void);
 void USER_LED_INIT(void);
+void USER_LED_BLINK_INIT(void);
 void USER_LED_SLOW_BLINK(void);
 void USER_LED_FAST_BLINK(void);
