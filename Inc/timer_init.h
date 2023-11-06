@@ -61,8 +61,22 @@ void LED_FLASH_TIMER_UPDATE_VAL(UINT16 ARR_Div_Val);
 #define TIM3_FLAG_CLEAR     CLEAR_BIT(TIM3->SR, 1U << 0)
 
 /*
- *  Configures a TIMERx to trigger an interrupt.
+ *  Macro to check the UIE bit within the SR register
+ */
+
+#define TIM2_COMPLETE_EVENT TIM2->SR & (1U << 0)
+#define TIM3_COMPLETE_EVENT TIM3->SR & (1U << 0)
+
+/*
+ *  Configures a TIMERx to trigger an interrupt
  */
 
 #define TIM2_IRQ_EN         SET_BIT(TIM2->DIER, 1U << 0)
 #define TIM3_IRQ_EN         SET_BIT(TIM3->DIER, 1U << 0)
+
+/*
+ *  Configures a TIMERx to disable itself after one event
+ */
+
+#define TIM2_OPM_EN         SET_BIT(TIM2->CR1, 1U << 3)
+#define TIM3_OPM_EN         SET_BIT(TIM3->CR1, 1U << 3)
