@@ -86,5 +86,3 @@
 
 
 #endif /* PORT_INIT_H_ */
-
-//TODO Create a mask for these GPIOX_BSRR_SEL functions and such.
