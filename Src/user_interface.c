@@ -11,6 +11,7 @@
 #include <common.h>
 #include <port_init.h>
 #include <timer_init.h>
+#include <user_interface.h>
 
 /*
  *  Functions to interface with the onboard LED (GPIOA Pin 5)
