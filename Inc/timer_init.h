@@ -11,6 +11,9 @@
 
 void LED_FLASH_TIMER_INIT(UINT16 PSC_Div_Val, UINT16 ARR_Div_Val);
 void LED_FLASH_TIMER_UPDATE_VAL(UINT16 ARR_Div_Val);
+void LCD_DELAY_OPM_TIMER_INIT(UINT16 ARR_Div_Val);
+void LCD_DELAY_OPM_TIMER_UPDATE(UINT16 ARR_Div_Val);
+
 
 /*
  *  Macro for TIMERx Enable Initialization
@@ -64,8 +67,8 @@ void LED_FLASH_TIMER_UPDATE_VAL(UINT16 ARR_Div_Val);
  *  Macro to check the UIE bit within the SR register
  */
 
-#define TIM2_COMPLETE_EVENT TIM2->SR & (1U << 0)
-#define TIM3_COMPLETE_EVENT TIM3->SR & (1U << 0)
+#define TIM2_COMPLETE_EVENT (TIM2->SR & (1U << 0))
+#define TIM3_COMPLETE_EVENT (TIM3->SR & (1U << 0))
 
 /*
  *  Configures a TIMERx to trigger an interrupt
