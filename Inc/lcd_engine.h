@@ -11,7 +11,8 @@ void LCD_COMMAND_INPUT_NO_POLL(UINT8 COMMAND);
 void LCD_COMMAND_INPUT(UINT8 COMMAND);
 void ENABLE_LATCH_PULSE(void);
 void LCD_INSTRUCTION_STARTUP(void);
-void LCD_DATA_WRITE(UINT8 data);
+void LCD_DATA_WRITE(char data);
+void LCD_STRING_WRITE(char *str);
 
 /*
  *  Masks of BSRR GPIO Macros for LCD interface
