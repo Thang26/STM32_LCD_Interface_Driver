@@ -93,11 +93,19 @@ void LCD_INSTRUCTION_STARTUP(void){
     LCD_COMMAND_INPUT(LCD_ON_CUR_ON);
 }
 
-void LCD_DATA_WRITE(UINT8 data){
+void LCD_DATA_WRITE(char data){
 
     LCD_READY_POLL();
     LCD_RS_CONFIG(RS_SET_TO_DATA)
     LCD_RW_CONFIG(RW_SET_TO_WRITE)
     GPIOC->ODR = data;
     ENABLE_LATCH_PULSE();
+}
+
+void LCD_STRING_WRITE(char *str){
+    
+    while(*str != '\0'){
+        LCD_DATA_WRITE(*str);
+        str++;
+    }
 }
