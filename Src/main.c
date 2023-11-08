@@ -16,7 +16,9 @@
  ******************************************************************************
  */
 #include <common.h>
+#include <timer_init.h>
 #include <lcd_init.h>
+#include <lcd_engine.h>
 #include <user_interface.h>
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
@@ -25,28 +27,41 @@
 
 int main(void)
 {
+	LCD_STARTUP();
 
 	while(1){
+
+		LCD_COMMAND_INPUT(CLR_DSPL);
+
+		LCD_STRING_WRITE("Hello");
+
+		LCD_DELAY_OPM_TIMER_UPDATE(10000);
+    	while(!(TIM2_COMPLETE_EVENT)){}
+
+		LCD_COMMAND_INPUT(CLR_DSPL);
+
+		LCD_STRING_WRITE("World!");
+
+		LCD_DELAY_OPM_TIMER_UPDATE(10000);
+    	while(!(TIM2_COMPLETE_EVENT)){}
 
 	}
 }
 
-OPERATION_RESULT LCD_STARTUP(void){
+void LCD_STARTUP(void){
 
 	__disable_irq();
-
 	USER_LED_BLINK_INIT();
-
 	__enable_irq();
-
 	USER_LED_FAST_BLINK();
 	
 	if(LCD_PORT_INIT()){
-		//USER_LED_SLOW_BLINK();
+		LCD_INSTRUCTION_STARTUP();
 	}
 	else{
-		//The init routine failed, best we can do is try again.
-		NVIC_SystemReset();
+		//The init routine failed.
+		while(1){}
 	}
 
+	USER_LED_SLOW_BLINK();
 }
