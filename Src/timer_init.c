@@ -67,4 +67,5 @@ void LCD_DELAY_OPM_TIMER_UPDATE(UINT16 ARR_Div_Val){
  *  30ms       PSC = 1600, ARR = 300
  *  10ms       PSC = 1600, ARR = 100
  *  1ms        PSC = 1600, ARR = 10
+ *  0.1ms      PSC = 1600, ARR = 2      //DO NOT PUT 1 FOR 0.1MS, ARR WILL BE SET T0 0!
  */
